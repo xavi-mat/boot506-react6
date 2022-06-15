@@ -1,6 +1,8 @@
 import { createContext, useReducer } from "react";
 import AppReducer from  "./AppReducer";
 import axios from "axios";
+import config from "../config/config.json";
+const X_RAPIDAPI_KEY = config.X_RAPIDAPI_KEY;
 
 // Aquí definimos estados iniciales de las variables globales
 const initialState = {

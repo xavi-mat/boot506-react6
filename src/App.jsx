@@ -13,11 +13,13 @@ function App() {
       <BrowserRouter>
         <Header />
         <GlobalProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/list" element={<NewsList />} />
-            <Route path="/form" element={<Form />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/news-list" element={<NewsList />} />
+              <Route path="/form" element={<Form />} />
+            </Routes>
+          </div>
         </GlobalProvider>
         <Footer />
       </BrowserRouter>
