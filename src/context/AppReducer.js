@@ -3,7 +3,8 @@ const articles = (state, action) => {
         case "GET_ARTICLES":
             return {
                 ...state,
-                articles: action.payload
+                articles: action.payload,
+                updatedAt: Math.floor((new Date()).getTime() / 1000),
             }
         default:
             return state;

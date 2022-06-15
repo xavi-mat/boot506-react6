@@ -4,7 +4,7 @@ import NewsPiece from "./NewsPiece/NewsPiece"
 
 function NewsList() {
 
-    const { articles, getArticles } = useContext(GlobalContext);
+    const { articles, getArticles, updatedAt } = useContext(GlobalContext);
     useEffect(() => {
         getArticles();
     }, []);
@@ -16,7 +16,10 @@ function NewsList() {
     return (
         <div>
             <h1>NewsList</h1>
-            {article}
+            <div className="text-end">Updated at {(new Date(updatedAt * 1000)).toLocaleTimeString('en')}</div>
+            <div className="d-flex flex-wrap justify-content-center">
+                {article}
+            </div>
         </div>
     )
 }

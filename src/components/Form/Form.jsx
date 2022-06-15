@@ -1,6 +1,6 @@
 function Form() {
   return (
-    <div>Form</div>
+    <h1>Form</h1>
   )
 }
 

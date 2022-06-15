@@ -13,13 +13,13 @@ function App() {
       <BrowserRouter>
         <Header />
         <GlobalProvider>
-          <div className="container">
+          <main className="container">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/news-list" element={<NewsList />} />
               <Route path="/form" element={<Form />} />
             </Routes>
-          </div>
+          </main>
         </GlobalProvider>
         <Footer />
       </BrowserRouter>
