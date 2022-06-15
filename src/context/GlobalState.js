@@ -13,7 +13,7 @@ const requestOptions = {
     url: 'https://bing-news-search1.p.rapidapi.com/news',
     headers: {
       'X-BingApis-SDK': 'true',
-      'X-RapidAPI-Key': '09bb8b8213msh507ffb56ed364adp1e53f0jsndd06d8c935b7',
+      'X-RapidAPI-Key': X_RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
     }
   };
