@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div>
+    <div className="container">
       <Link to="/">Home</Link>
       &nbsp;|&nbsp;
       <Link to="/list">News List</Link>
