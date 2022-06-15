@@ -10,3 +10,4 @@ const articles = (state, action) => {
     }
 }
 
+export default articles;

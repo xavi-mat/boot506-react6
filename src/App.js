@@ -17,7 +17,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/list" element={<NewsList />} />
             <Route path="/form" element={<Form />} />
-            <Form />
           </Routes>
         </GlobalProvider>
         <Footer />
