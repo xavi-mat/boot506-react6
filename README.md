@@ -24,53 +24,41 @@ all of them. The Header has three buttons, with `<Link />`, to access to the
 three routes, and a Country selector with three options: USA, Spain, France.
 
 ### Routes
-**Home** `/` It shows three blocks:
-* The first five headlines, as clickable items in an "item list".
+**Home** `/`
+* A block of five headlines, as clickable items in an "item list".
 * A side bar with add-like images.
 * A big image, just to fill the space.
 
 **News List** `/news-list`
-* A flex-wrap block with 10 news in cards. With headline, short description, small
+* A flex-wrap block with 10 news-cards. With headline, short description, small
 side image and a "Read more" button with the link.
 
-**Home** `/form`
-aa
+**Form** `/form`
+* A form to write news, with 4 inputs: headline, description, url and image-url.
 
 ### Bootstrap
+All the page is stylized with the "Darkly" [Bootstrap](https://getbootstrap.com/)
+variant from [Bootswatch](https://bootswatch.com/).
+The minified css file has been included in the `public/styles` folder and linked
+from the index.html file.
 
-* Responsive
+It's **responsive** by default thanks to the `container` class and the `flex`
+classes from BS. The big image in the Home will be hidden in smaller devices.
 
 ### SASS
+To get a more granular style in the card-news, there is a `.scss` file to adjust
+the maximum width of the card and the minimum width of the image in every card.
+Some SASS functionalities have been tested in this file: variables, mixins and
+extend.
 
+### Use Context
+React Context Variables have been implemented to keep track of: articles loaded,
+last time when the news have been fetched from the API, and selected country.
 
+To avoid too many requests to the API, news in the same language are not fetched
+again until 60 seconds have passed. Changing the language, instead, triggers
+againt the function to get the articles.
 
+### Author
 
-### 1. Página de noticias
-
-* Vamos a englobar todo lo visto estos días con un miniproyecto con React
-utilizando [News API](https://developer.nytimes.com/apis) vista principal de la
-página
-* Implementa React Router en tu página
-    * `/home`. Home de la app
-    * `/form`. Formulario para crear noticia
-    * `/list`. Lista detallada de noticias
-
-* Componentes mínimos
-    * Header
-    * Home.
-    * Form.
-        * Formulario de alta de nueva noticia.
-        * Guardar formulario en el local storage
-        * Tras dar de alta debes redirigir a ListNews
-    * ListNews. Pinta las noticias
-    * Footer
-
-* Importante el diseño
-* Utilizar context
-* Utilizar SASS
-* Readme Excelente!!!
-
-### 2. Extra
-* Que sea responsive
-
-
+Xavimat: [GitHub](@xavi-mat) | [LinkedIn](https://www.linkedin.com/in/xavier-matoses/)

@@ -7,7 +7,7 @@ import config from "../config/config.json";
 const initialState = {
     articles: [],
     updatedAt: 0,  // Seconds from UNIX era
-    country: 'en-US',  // Language
+    country: 'en-US',  // Language/Country
 }
 
 const requestOptions = {
