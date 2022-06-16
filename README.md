@@ -66,6 +66,28 @@ To avoid too many requests to the API, news in the same language are not fetched
 again until 60 seconds have passed. Changing the language, instead, triggers
 again the function to get the articles.
 
+### Language/Country selector
+The *Language/Country* selector updates the context property `country`. Home and
+News list have Hooks listening the changes of the `country` state and trigger
+the `getArticles()` method to fetch news from the API.
+
+All the strings in the pages are stored in different languages in a constant
+object `LANG`. When mounted, every component with localizable text creates a
+`lang` object.
+```js
+const lang = LANG[country];
+```
+Later, every localized sentence is included in the component from the `lang` object.
+```js
+return (
+    <>
+      <h1>{lang.Home}</h1>
+      ...
+          <h3>{lang.Headlines}</h3>
+          ...
+            <h3 className="mt-3">{lang.HomeSubtitle}</h3>
+```
+
 ### Author
 
 Xavimat: [GitHub](@xavi-mat) | [LinkedIn](https://www.linkedin.com/in/xavier-matoses/)
