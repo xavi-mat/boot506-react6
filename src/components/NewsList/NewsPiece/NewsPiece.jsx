@@ -14,7 +14,8 @@ function NewsPiece({ art }) {
               {art.description}...
             </div>
             <div className="text-end w-100">
-              <a className="btn btn-secondary" href={art.url} target="_blank" rel="noreferrer">Read more</a>
+              <a className="btn btn-secondary me-2" href={art.url} target="_blank" rel="noreferrer">Read more</a>
+              {/* <a className="btn btn-secondary">🗑️</a> */}
             </div>
           </div>
         </div>

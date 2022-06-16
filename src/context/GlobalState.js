@@ -7,11 +7,12 @@ import config from "../config/config.json";
 const initialState = {
     articles: [],
     updatedAt: 0,  // Seconds from UNIX era
+    country: 'ES',  // Language
 }
 
 const requestOptions = {
     method: 'GET',
-    url: 'https://bing-news-search1.p.rapidapi.com/news?cc=US',
+    url: 'https://bing-news-search1.p.rapidapi.com/news?cc=',
     headers: {
       'X-BingApis-SDK': 'true',
       'X-RapidAPI-Key': config.X_RAPIDAPI_KEY,
@@ -29,16 +30,14 @@ export const GlobalProvider = ({ children }) => {
     const getArticles = async () => {
 
         const UNIXTime = Math.floor((new Date()).getTime() / 1000);
-        // console.log(state.updatedAt, UNIXTime, UNIXTime - state.updatedAt)
 
         if (state.updatedAt > UNIXTime - 60 ) {
-            // console.log("Don't update yet")
             return;
         }
-        // console.log("Fetching news...")
 
         try {
-            const res = await axios.request(requestOptions);
+            const url = requestOptions.url + state.country;
+            const res = await axios.request({...requestOptions, url});
 
             dispatch({
                 type: 'GET_ARTICLES',
@@ -55,6 +54,7 @@ export const GlobalProvider = ({ children }) => {
                 articles: state.articles,
                 getArticles,
                 updatedAt: state.updatedAt,
+                country: state.country,
             }}
             >
             {children}

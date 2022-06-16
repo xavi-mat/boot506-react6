@@ -11,16 +11,16 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <GlobalProvider>
-          <main className="container">
+        <main className="container">
+          <Header />
+          <GlobalProvider>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/news-list" element={<NewsList />} />
               <Route path="/form" element={<Form />} />
             </Routes>
-          </main>
-        </GlobalProvider>
+          </GlobalProvider>
+        </main>
         <Footer />
       </BrowserRouter>
     </>

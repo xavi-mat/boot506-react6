@@ -9,6 +9,10 @@ function NewsList() {
         getArticles();
     }, []);
 
+    if (articles.length < 1) {
+        return (<div className="spinner-grow spinner-grow-lg"></div>)
+    }
+
     const article = articles.map((art, i) => (
         <NewsPiece key={i} art={art} />
     ));
