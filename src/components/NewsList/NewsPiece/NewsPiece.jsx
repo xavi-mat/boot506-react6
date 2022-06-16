@@ -5,7 +5,7 @@ function NewsPiece({ art, lang }) {
   const img = art.image?.thumbnail.contentUrl ?? '/assets/unavailable.jpg'
 
   return (
-    <div className="card card-in-list m-3">
+    <div className="card news-card m-3">
       <div className="card-header lead">{art.name}</div>
       <div className="card-body">
         <div className="d-flex">

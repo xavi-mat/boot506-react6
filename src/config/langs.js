@@ -11,6 +11,7 @@ export const LANG = {
         imageUrl: "Image url",
         sendForm: "Send",
         readMore: "Read more",
+        HomeSubtitle: "Big image",
     },
     "es-ES": {
         Home: "Casa",
@@ -24,6 +25,7 @@ export const LANG = {
         imageUrl: "Url de la imagen",
         sendForm: "Enviar",
         readMore: "Leer más",
+        HomeSubtitle: "Foto grandota pa rellenar",
     },
     "fr-FR": {
         Home: "Home, pero en francés",
@@ -37,5 +39,6 @@ export const LANG = {
         imageUrl: "Image url, pero en francés",
         sendForm: "Send, pero en francés",
         readMore: "Read more, pero en francés",
+        HomeSubtitle: "Big image, pero en francés",
     },
 }

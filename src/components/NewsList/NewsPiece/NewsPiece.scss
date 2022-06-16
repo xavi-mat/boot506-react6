@@ -1,6 +1,23 @@
-.card-in-list {
-    max-width: 500px;
+// We need to use SASS for the exercise
+
+// 1. Variables
+$newsCardMaxWidth: 500px;
+$imageInCardMinWidth: 100px;
+
+// 2. Mixins
+@mixin minWidth($property) {
+    min-width: $property;
+}
+
+// 3. Extend
+%newsCardWidth {
+    max-width: $newsCardMaxWidth;
+}
+
+// Use SASS elements in classes:
+.news-card {
+    @extend %newsCardWidth;
 }
 .img-in-card {
-    min-width: 100px;
+    @include minWidth($imageInCardMinWidth);
 }

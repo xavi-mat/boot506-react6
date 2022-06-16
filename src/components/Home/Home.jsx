@@ -4,8 +4,10 @@ import Headline from "./Headline/Headline";
 import { LANG } from "../../config/langs";
 import publi1 from "../../assets/publi1.jpg"
 import publi2 from "../../assets/publi2.jpg"
-import publi3 from "../../assets/publi3.jpg"
 import publi4 from "../../assets/publi4.jpg"
+import publi5 from "../../assets/publi5.jpg"
+import cityImg from "../../assets/city.jpg"
+
 
 function Home() {
 
@@ -36,15 +38,15 @@ function Home() {
       <div className="row">
         <div className="col-md-8">
           <h3>{lang.Headlines}</h3>
-          <div className="list-group">
-            {content}
-          </div>
+          <div className="list-group">{content}</div>
+          <h3 className="mt-3">{lang.HomeSubtitle}</h3>
+          <img className="img-fluid mb-2" src={cityImg} alt="" />
         </div>
         <div className="col-md-4">
-          <img className="img-fluid mb-2" src={publi1} />
-          <img className="img-fluid mb-2" src={publi2} />
-          <img className="img-fluid mb-2" src={publi3} />
-          <img className="img-fluid mb-2" src={publi4} />
+          <img className="img-fluid mb-2" src={publi1} alt="" />
+          <img className="img-fluid mb-2" src={publi2} alt="" />
+          <img className="img-fluid mb-2" src={publi4} alt="" />
+          <img className="img-fluid mb-2" src={publi5} alt="" />
         </div>
       </div>
     </>
