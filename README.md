@@ -2,7 +2,7 @@
 
 Exercise for [The Bridge](https://thebridge.tech).
 
-## Summary
+## Exercise requirements
 * A React mini-project to practice all basic React elements already seen.
 * Implement a "News Web"
 * Use the [NYT News API](https://developer.nytimes.com/apis).
@@ -28,17 +28,20 @@ three routes, and a Country selector with three options: USA, Spain, France.
 * A block of five headlines, as clickable items in an "item list".
 * A side bar with add-like images.
 * A big image, just to fill the space.
+
 ![Home screenshot](./docs/screenshot1.jpg)
 
 **News List** `/news-list`
 * A flex-wrap block with 10 news-cards. With headline, short description, small
 side image and a "Read more" button with the link.
+
 ![News list screenshot](./docs/screenshot2.jpg)
 
 **Form** `/form`
 * A form to write news, with 4 inputs: headline, description, url and image-url.
-![Form screenshot](./docs/screenshot3.jpg)
 * Data written by the user is saved in localStorage.
+
+![Form screenshot](./docs/screenshot3.jpg)
 
 ### Bootstrap
 All the page is stylized with the "Darkly" [Bootstrap](https://getbootstrap.com/)
