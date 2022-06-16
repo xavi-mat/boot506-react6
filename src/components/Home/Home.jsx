@@ -29,7 +29,7 @@ function Home() {
     )
   } else {
     content = articles.slice(0, 5).map((art, i) => (
-      <Headline key={i} art={art} lang={lang} />
+      <Headline key={i} art={art} />
     ));
   }
   return (
