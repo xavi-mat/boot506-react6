@@ -1,6 +1,6 @@
-.card {
+.card-in-list {
     max-width: 500px;
 }
-img {
+.img-in-card {
     min-width: 100px;
 }

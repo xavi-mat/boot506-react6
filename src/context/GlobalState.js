@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import AppReducer from  "./AppReducer";
+import AppReducer from "./AppReducer";
 import axios from "axios";
 import config from "../config/config.json";
 
@@ -7,18 +7,18 @@ import config from "../config/config.json";
 const initialState = {
     articles: [],
     updatedAt: 0,  // Seconds from UNIX era
-    country: 'ES',  // Language
+    country: 'en-US',  // Language
 }
 
 const requestOptions = {
     method: 'GET',
-    url: 'https://bing-news-search1.p.rapidapi.com/news?cc=',
+    url: 'https://bing-news-search1.p.rapidapi.com/news',
     headers: {
-      'X-BingApis-SDK': 'true',
-      'X-RapidAPI-Key': config.X_RAPIDAPI_KEY,
-      'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+        'X-BingApis-SDK': 'true',
+        'X-RapidAPI-Key': config.X_RAPIDAPI_KEY,
+        'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
     }
-  };
+};
 
 
 export const GlobalContext = createContext(initialState);
@@ -31,13 +31,15 @@ export const GlobalProvider = ({ children }) => {
 
         const UNIXTime = Math.floor((new Date()).getTime() / 1000);
 
-        if (state.updatedAt > UNIXTime - 60 ) {
+        if (state.updatedAt > UNIXTime - 60) {
             return;
         }
 
         try {
-            const url = requestOptions.url + state.country;
-            const res = await axios.request({...requestOptions, url});
+            const url = requestOptions.url +
+                '?mkt=' + state.country +
+                '&setLang=' + state.country;
+            const res = await axios.request({ ...requestOptions, url });
 
             dispatch({
                 type: 'GET_ARTICLES',
@@ -48,6 +50,13 @@ export const GlobalProvider = ({ children }) => {
         }
     }
 
+    const setCountry = (country) => {
+        dispatch({
+            type: 'UPDATE_COUNTRY',
+            payload: country,
+        });
+    }
+
     return (
         <GlobalContext.Provider
             value={{
@@ -55,8 +64,9 @@ export const GlobalProvider = ({ children }) => {
                 getArticles,
                 updatedAt: state.updatedAt,
                 country: state.country,
+                setCountry,
             }}
-            >
+        >
             {children}
         </GlobalContext.Provider>
     )

@@ -12,8 +12,8 @@ function App() {
     <>
       <BrowserRouter>
         <main className="container">
-          <Header />
           <GlobalProvider>
+            <Header />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/news-list" element={<NewsList />} />
