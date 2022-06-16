@@ -39,8 +39,10 @@ function Home() {
         <div className="col-md-8">
           <h3>{lang.Headlines}</h3>
           <div className="list-group">{content}</div>
-          <h3 className="mt-3">{lang.HomeSubtitle}</h3>
-          <img className="img-fluid mb-2" src={cityImg} alt="" />
+          <div className="d-none d-md-block">
+            <h3 className="mt-3">{lang.HomeSubtitle}</h3>
+            <img className="img-fluid mb-2" src={cityImg} alt="" />
+          </div>
         </div>
         <div className="col-md-4">
           <img className="img-fluid mb-2" src={publi1} alt="" />
