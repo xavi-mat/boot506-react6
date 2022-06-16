@@ -64,7 +64,7 @@ last time when the news have been fetched from the API, and selected country.
 
 To avoid too many requests to the API, news in the same language are not fetched
 again until 60 seconds have passed. Changing the language, instead, triggers
-againt the function to get the articles.
+again the function to get the articles.
 
 ### Author
 
