@@ -18,7 +18,7 @@ function NewsList() {
         content = (<div className="spinner-grow spinner-grow-lg"></div>)
     } else {
         content = articles.map((art, i) => (
-            <NewsPiece key={i} art={art} />
+            <NewsPiece key={i} art={art} lang={lang} />
         ));
     }
 

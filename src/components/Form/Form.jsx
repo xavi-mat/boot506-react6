@@ -31,31 +31,39 @@ function Form() {
       url: newsPiece.url,
       image: { thumbnail: { contentUrl: newsPiece.image } },
     }
-    // TODO
+
+    const newsInLocalRAW = localStorage.S6_newsInLocal ?? '[]';
+    const newsInLocal = JSON.parse(newsInLocalRAW);
+    newsInLocal.unshift(newNews);
+    localStorage.S6_newsInLocal = JSON.stringify(newsInLocal);
   }
-
-
 
   return (
     <>
       <h1>{lang.Form}</h1>
       <form onSubmit={handleSubmit}>
         <input name="name"
+          className="form-control mb-2"
           value={newsPiece.name}
           onChange={handleInputChange}
-          placeholder={lang.newsName} />
+          placeholder={lang.newsName} required />
         <input name="description"
+          className="form-control mb-2"
           value={newsPiece.description}
           onChange={handleInputChange}
-          placeholder={lang.newsDescription} />
+          placeholder={lang.newsDescription} required />
         <input name="url"
+          className="form-control mb-2"
           value={newsPiece.url}
           onChange={handleInputChange}
           placeholder={lang.newsUrl} />
         <input name="image"
+          className="form-control mb-2"
           value={newsPiece.image}
           onChange={handleInputChange}
           placeholder={lang.imageUrl} />
+        <input type="submit" value={lang.sendForm}
+          className="form-control btn btn-primary" />
       </form>
     </>
   )

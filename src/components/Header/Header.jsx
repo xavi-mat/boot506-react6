@@ -32,7 +32,6 @@ function Header() {
           <option value="en-US">Iuesei</option>
           <option value="es-ES">Ejpaña</option>
           <option value="fr-FR">Lafrans</option>
-          <option value="de-DE">Doichland</option>
         </select>
       </div>
     </nav>
